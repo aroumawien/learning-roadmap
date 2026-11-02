@@ -39,7 +39,7 @@ const modules = [
     topics:
       "ES6+, array methods, DOM, async/await, Fetch API, JSON, modules and error handling.",
     channel: "SuperSimpleDev",
-    channelUrl: "https://www.youtube.com/@SuperSimpleDev",
+    channelUrl: "https://www.youtube.com/@TraversyMedia",
     tutorial: "JavaScript Tutorial Full Course - Beginner to Pro",
     tutorialUrl: "https://www.youtube.com/watch?v=EerdGm-ehJQ&t=17755s",
     project: "Build interactive applications with multiple connected features",
@@ -466,3 +466,148 @@ if (supplementGrid)
         `<article class="supplement-card"><div class="supplement-top"><span class="supplement-number">${String(i + 1).padStart(2, "0")}</span><span class="supplement-date">START ${s.start.toUpperCase()}</span></div><h3>${s.title}</h3><p>${s.topics}</p><div class="supplement-time">◷ ${s.time} · flexible rotation</div><div class="module-links"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.channel} ↗</a><a href="https://www.youtube.com/results?search_query=${encodeURIComponent(s.query)}" target="_blank" rel="noopener noreferrer">Find tutorial ↗</a></div></article>`,
     )
     .join("");
+
+// Optional post-roadmap specialization: independent progress, never alters the 18-module core score.
+const specializationModules = [
+  {
+    id: "php",
+    title: "PHP Fundamentals & Modern PHP",
+    dates: "1–28 Nov 2027",
+    duration: "4 weeks",
+    topics:
+      "PHP 8+, syntax, forms, arrays, functions, OOP, namespaces, Composer, PDO and safe database access.",
+    channel: "Program With Gio",
+    channelUrl: "https://www.youtube.com/@ProgramWithGio",
+    tutorial: "Learn PHP the Right Way",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=Program+With+Gio+Learn+PHP+The+Right+Way",
+    project: "PHP-powered contact form and CRUD dashboard.",
+  },
+  {
+    id: "laravel",
+    title: "Laravel Framework",
+    dates: "29 Nov–26 Dec 2027",
+    duration: "4 weeks",
+    topics:
+      "MVC, routing, Blade, Eloquent ORM, migrations, validation, authentication and REST APIs.",
+    channel: "The Net Ninja",
+    channelUrl: "https://www.youtube.com/@NetNinja",
+    tutorial: "Laravel Tutorial for Beginners",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=The+Net+Ninja+Laravel+Tutorial+for+Beginners",
+    project: "Laravel API with secure admin access.",
+  },
+  {
+    id: "mysqladvanced",
+    title: "Advanced MySQL & Database Design",
+    dates: "27 Dec 2027–23 Jan 2028",
+    duration: "4 weeks",
+    topics:
+      "Query plans, indexing, transactions, locking, optimization, backups, restore, permissions and schema migrations.",
+    channel: "freeCodeCamp",
+    channelUrl: "https://www.youtube.com/@freecodecamp",
+    tutorial: "Advanced MySQL Query Optimization",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=freeCodeCamp+MySQL+indexes+query+optimization+database+design",
+    project: "Optimize and back up the SAFE database.",
+  },
+  {
+    id: "linux",
+    title: "Linux, Servers & Nginx",
+    dates: "24 Jan–13 Feb 2028",
+    duration: "3 weeks",
+    topics:
+      "Linux command line, SSH keys, file permissions, web servers, TLS, environment variables and server logs.",
+    channel: "Learn Linux TV",
+    channelUrl: "https://www.youtube.com/@LearnLinuxTV",
+    tutorial: "Linux Server Administration",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=Learn+Linux+TV+Linux+server+administration+Nginx",
+    project: "Deploy a test application to a Linux server.",
+  },
+  {
+    id: "devops",
+    title: "GitHub Actions, Docker & CI/CD",
+    dates: "14 Feb–5 Mar 2028",
+    duration: "3 weeks",
+    topics:
+      "Containerized services, automated tests, GitHub Actions, deployments, secret management and rollback planning.",
+    channel: "TechWorld with Nana",
+    channelUrl: "https://www.youtube.com/@TechWorldwithNana",
+    tutorial: "Docker and CI/CD for Beginners",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=TechWorld+with+Nana+Docker+CI+CD+GitHub+Actions",
+    project: "Automated build, test and deployment workflow.",
+  },
+  {
+    id: "performance",
+    title: "Caching, APIs & Application Performance",
+    dates: "6–26 Mar 2028",
+    duration: "3 weeks",
+    topics:
+      "API design, pagination, rate limiting, Redis fundamentals, caching, monitoring and performance profiling.",
+    channel: "Hussein Nasser",
+    channelUrl: "https://www.youtube.com/@hnasr",
+    tutorial: "Backend Engineering and Caching",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=Hussein+Nasser+backend+engineering+Redis+caching+API",
+    project: "Improve response times and reliability of your API.",
+  },
+  {
+    id: "production",
+    title: "Production Security & Full-Stack Capstone",
+    dates: "27 Mar–30 Apr 2028",
+    duration: "5 weeks",
+    topics:
+      "OWASP fundamentals, authorization tests, backups, monitoring, documentation, accessibility and production deployment.",
+    channel: "freeCodeCamp",
+    channelUrl: "https://www.youtube.com/@freecodecamp",
+    tutorial: "Laravel Full Stack Project and Security",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=freeCodeCamp+Laravel+PHP+MySQL+full+stack+project+security",
+    project:
+      "Secure Laravel/MySQL API integrated with an existing web or mobile app.",
+  },
+];
+const specializationKey = "devpath-specialization-v1";
+let specializationDone = new Set();
+try {
+  const saved = JSON.parse(localStorage.getItem(specializationKey) || "[]");
+  if (Array.isArray(saved))
+    specializationDone = new Set(
+      saved.filter((id) => specializationModules.some((m) => m.id === id)),
+    );
+} catch {}
+const specializationGrid = document.getElementById("specializationGrid");
+function renderSpecialization() {
+  if (!specializationGrid) return;
+  specializationGrid.innerHTML = specializationModules
+    .map(
+      (m, i) =>
+        `<article class="module-card ${specializationDone.has(m.id) ? "is-complete" : ""}"><div class="module-card-top"><span class="module-number">${String(i + 19).padStart(2, "0")}</span><span class="category web">POST-ROADMAP</span></div><h3>${m.title}</h3><div class="module-meta"><span>◷ ${m.duration}</span><span>▦ ${m.dates}</span></div><p class="topics">${m.topics}</p><div class="deliverable"><span>PROJECT OUTCOME</span><p>${m.project}</p></div><div class="module-links"><a href="${m.channelUrl}" target="_blank" rel="noopener noreferrer">${m.channel} ↗</a><a href="${m.tutorialUrl}" target="_blank" rel="noopener noreferrer">Watch tutorial ↗</a></div><label class="complete-label"><input type="checkbox" data-specialization="${m.id}" ${specializationDone.has(m.id) ? "checked" : ""}/><span class="fake-checkbox" aria-hidden="true">✓</span><span>${specializationDone.has(m.id) ? "Completed" : "Mark as completed"}</span></label></article>`,
+    )
+    .join("");
+  const pct = Math.round(
+    (specializationDone.size / specializationModules.length) * 100,
+  );
+  document.getElementById("specializationPercent").textContent = pct + "%";
+  document.getElementById("specializationCount").textContent =
+    `${specializationDone.size} of ${specializationModules.length} completed`;
+  document.getElementById("specializationProgress").style.width = pct + "%";
+}
+if (specializationGrid) {
+  specializationGrid.addEventListener("change", (event) => {
+    const input = event.target.closest("input[data-specialization]");
+    if (!input) return;
+    if (input.checked) specializationDone.add(input.dataset.specialization);
+    else specializationDone.delete(input.dataset.specialization);
+    try {
+      localStorage.setItem(
+        specializationKey,
+        JSON.stringify([...specializationDone]),
+      );
+    } catch {}
+    renderSpecialization();
+  });
+  renderSpecialization();
+}
