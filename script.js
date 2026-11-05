@@ -31,6 +31,22 @@ const modules = [
   },
 
   {
+    id: 19,
+    group: "web",
+    title: "Git & GitHub",
+    dates: "Alongside JavaScript · November 2026",
+    duration: "2 parts + ongoing practice",
+    topics:
+      "Version control, repositories, staging, commits, history, GitHub remotes, branches, merging and collaboration.",
+    channel: "SuperSimpleDev",
+    channelUrl: "https://www.youtube.com/@SuperSimpleDev",
+    tutorial: "Git & GitHub · Part 1",
+    tutorialUrl: "https://youtu.be/hrTQipWp6co?si=K1JaUvp-cDkZzaUp",
+    tutorial2Url: "https://youtu.be/1ibmWyt8hfw?si=Suo3lz2B210rIAzQ",
+    project:
+      "Track your JavaScript learning notes with Git, push to GitHub, then practise a branch and merge.",
+  },
+  {
     id: 1,
     group: "web",
     title: "Advanced JavaScript",
@@ -38,11 +54,13 @@ const modules = [
     duration: "3 weeks",
     topics:
       "ES6+, array methods, DOM, async/await, Fetch API, JSON, modules and error handling.",
-    channel: "SuperSimpleDev",
+    channel: "Traversy Media",
     channelUrl: "https://www.youtube.com/@TraversyMedia",
-    tutorial: "JavaScript Tutorial Full Course - Beginner to Pro",
-    tutorialUrl: "https://www.youtube.com/watch?v=EerdGm-ehJQ&t=17755s",
-    project: "Build interactive applications with multiple connected features",
+    tutorial: "Modern JavaScript From the Beginning",
+    tutorialUrl:
+      "https://www.youtube.com/results?search_query=Traversy+Media+Modern+JavaScript+From+The+Beginning",
+    project:
+      "Interactive task manager with search, filtering and localStorage.",
   },
   {
     id: 2,
@@ -280,23 +298,22 @@ try {
   const saved = JSON.parse(raw ?? legacy ?? "[]");
   if (Array.isArray(saved))
     completed = new Set([
-      ...saved.filter((n) => Number.isInteger(n) && n >= 1 && n <= 18),
+      ...saved.filter(
+        (n) => Number.isInteger(n) && modules.some((m) => m.id === n),
+      ),
       17,
       18,
     ]);
 } catch {}
 const grid = document.getElementById("moduleGrid");
 function render(filter = "all") {
-  const selected = modules
-    .filter((m) => filter === "all" || m.group === filter)
-    .sort(
-      (a, b) =>
-        (a.id >= 17 ? -20 + a.id : a.id) - (b.id >= 17 ? -20 + b.id : b.id),
-    );
+  const selected = modules.filter(
+    (m) => filter === "all" || m.group === filter,
+  );
   grid.innerHTML = selected
     .map(
       (m) =>
-        `<article class="module-card ${completed.has(m.id) ? "is-complete" : ""}"><div class="module-card-top"><span class="module-number">${String(m.id).padStart(2, "0")}</span><span class="category ${m.group}">${m.group === "web" ? "WEB DEVELOPMENT" : m.group === "mobile" ? "MOBILE DEVELOPMENT" : "PORTFOLIO"}</span></div><h3>${m.title}</h3><div class="module-meta"><span>◷ ${m.duration}</span><span>▦ ${m.dates}</span></div><p class="topics">${m.topics}</p><div class="deliverable"><span>PROJECT OUTCOME</span><p>${m.project}</p></div><div class="module-links"><a href="${m.channelUrl}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${m.channel} YouTube channel">${m.channel} ↗</a><a href="${m.tutorialUrl}" target="_blank" rel="noopener noreferrer" aria-label="Find ${m.tutorial} on YouTube">Watch tutorial ↗</a></div><label class="complete-label"><input type="checkbox" data-id="${m.id}" ${completed.has(m.id) ? "checked" : ""}/><span class="fake-checkbox" aria-hidden="true">✓</span><span>${completed.has(m.id) ? "Completed" : "Mark as completed"}</span></label></article>`,
+        `<article class="module-card ${completed.has(m.id) ? "is-complete" : ""}"><div class="module-card-top"><span class="module-number">${String(m.id).padStart(2, "0")}</span><span class="category ${m.group}">${m.group === "web" ? "WEB DEVELOPMENT" : m.group === "mobile" ? "MOBILE DEVELOPMENT" : "PORTFOLIO"}</span></div><h3>${m.title}</h3><div class="module-meta"><span>◷ ${m.duration}</span><span>▦ ${m.dates}</span></div><p class="topics">${m.topics}</p><div class="deliverable"><span>PROJECT OUTCOME</span><p>${m.project}</p></div><div class="module-links"><a href="${m.channelUrl}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${m.channel} YouTube channel">${m.channel} ↗</a><a href="${m.tutorialUrl}" target="_blank" rel="noopener noreferrer" aria-label="Find ${m.tutorial} on YouTube">${m.tutorial2Url ? "Watch Part 1 ↗" : "Watch tutorial ↗"}</a>${m.tutorial2Url ? `<a href="${m.tutorial2Url}" target="_blank" rel="noopener noreferrer">Watch Part 2 ↗</a>` : ""}</div><label class="complete-label"><input type="checkbox" data-id="${m.id}" ${completed.has(m.id) ? "checked" : ""}/><span class="fake-checkbox" aria-hidden="true">✓</span><span>${completed.has(m.id) ? "Completed" : "Mark as completed"}</span></label></article>`,
     )
     .join("");
   updateProgress();
@@ -611,3 +628,30 @@ if (specializationGrid) {
   });
   renderSpecialization();
 }
+
+// Switch the fixed background after the hero passes beneath the header.
+const heroSection = document.getElementById("home");
+const roadmapHeader = document.querySelector(".site-header");
+function updateRoadmapBackground() {
+  const headerHeight = roadmapHeader.getBoundingClientRect().height;
+  document.body.classList.toggle(
+    "past-hero",
+    heroSection.getBoundingClientRect().bottom <= headerHeight,
+  );
+}
+let backgroundFramePending = false;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (backgroundFramePending) return;
+    backgroundFramePending = true;
+    requestAnimationFrame(() => {
+      updateRoadmapBackground();
+      backgroundFramePending = false;
+    });
+  },
+  { passive: true },
+);
+window.addEventListener("resize", updateRoadmapBackground);
+window.addEventListener("pageshow", updateRoadmapBackground);
+updateRoadmapBackground();
