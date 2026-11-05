@@ -1264,3 +1264,60 @@ h1 span {
     font-size: 0.65rem;
   }
 }
+
+/* Background images live beside index.html, styles.css and script.js. */
+body {
+  isolation: isolate;
+}
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+  transition: opacity 0.45s ease;
+}
+body::before {
+  background-image:
+    linear-gradient(rgba(10, 17, 32, 0.86), rgba(10, 17, 32, 0.86)),
+    url("./hero1.png");
+}
+body::after {
+  background-image:
+    linear-gradient(rgba(10, 17, 32, 0.88), rgba(10, 17, 32, 0.88)),
+    url("./hero2.png");
+  opacity: 0;
+}
+body.past-hero::before {
+  opacity: 0;
+}
+body.past-hero::after {
+  opacity: 1;
+}
+:root[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(246, 248, 252, 0.88), rgba(246, 248, 252, 0.88)),
+    url("./hero1.png");
+}
+:root[data-theme="light"] body::after {
+  background-image:
+    linear-gradient(rgba(246, 248, 252, 0.9), rgba(246, 248, 252, 0.9)),
+    url("./hero2.png");
+}
+.hero,
+.section,
+.footer {
+  background: rgba(0, 0, 0, 0.15);
+}
+.module-links {
+  flex-wrap: wrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    transition: none;
+  }
+}
