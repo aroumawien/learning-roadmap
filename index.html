@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b1426" />
+    <title>Home · Learning Campus | Devpath</title>
+    <link rel="icon" href="https://seekicon.com/free-icon-download/dev_1.svg" />
+    <link rel="preload" as="image" href="hero1.png" />
+    <link rel="preload" as="image" href="hero2.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="hub.css" />
+    <script src="common.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container hub-nav">
+        <a href="index.html" class="brand"
+          ><span class="brand-mark"
+            ><img
+              src="https://seekicon.com/free-icon-download/dev_1.svg"
+              alt="Devpath logo"
+              width="34"
+              height="34" /></span
+          ><span
+            >dev<span class="brand-accent">path</span
+            ><small>PERSONAL LEARNING CAMPUS</small></span
+          ></a
+        ><button
+          id="menuToggle"
+          class="icon-btn"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="hubMenu"
+        >
+          ☰
+        </button>
+        <nav id="hubMenu" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="ai.html">Agentic AI &amp; ML</a
+          ><a href="software.html">Software &amp; Web</a
+          ><a href="graphics.html">Graphics</a><a href="video.html">Video</a
+          ><a href="audio.html">Audio</a
+          ><a href="architecture.html">Architecture</a>
+          <div class="nav-dropdown">
+            <button
+              id="moreToggle"
+              aria-expanded="false"
+              aria-controls="moreMenu"
+            >
+              More courses ▾
+            </button>
+            <div id="moreMenu" class="dropdown-panel">
+              <a href="cybersecurity.html"
+                >Cyber Security &amp; Ethical Hacking</a
+              ><a href="cloud.html">Cloud Computing</a
+              ><a href="data.html">Data Science &amp; Analytics</a
+              ><a href="networking.html">Networking &amp; IT Support</a
+              ><a href="repair.html">Computer Repair &amp; Maintenance</a
+              ><a href="office.html">Microsoft Office Professional</a>
+            </div>
+          </div>
+        </nav>
+        <button
+          id="themeToggle"
+          class="icon-btn"
+          aria-label="Toggle light or dark mode"
+        >
+          ☀
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section id="home" class="hero hub-hero home-slideshow">
+        <div class="hero-slides" aria-hidden="true">
+          <div
+            class="hero-slide"
+            style="--slide-image: url(&quot;hero1.png&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="--slide-image: url(&quot;hero2.png&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="--slide-image: url(&quot;hero3.png&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="--slide-image: url(&quot;hero4.png&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="--slide-image: url(&quot;hero5.png&quot;)"
+          ></div>
+        </div>
+        <div class="container">
+          <div class="eyebrow">YOUR PERSONAL LEARNING CAMPUS</div>
+          <h1>One place for your <span>next chapter.</span></h1>
+          <p>
+            Continue your software journey. Practise AI whenever you have time.
+            Explore a clear sequence for design, media, architecture and
+            essential IT skills.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="software.html"
+              >Continue development →</a
+            ><a class="btn btn-outline" href="ai.html">Practise AI today</a>
+          </div>
+          <div
+            class="demo-screen"
+            aria-label="Animated examples of learning projects"
+          >
+            <div class="demo-top">
+              <span>● ● ●</span
+              ><strong id="demoTitle">Python · Report check</strong
+              ><button
+                id="demoPause"
+                type="button"
+                aria-label="Pause learning preview"
+              >
+                Pause
+              </button>
+            </div>
+            <div id="demoCanvas" class="demo-canvas"></div>
+            <div class="demo-bottom">
+              <span id="demoCount">1 / 7</span
+              ><span>Learning preview · illustrative demos</span>
+            </div>
+          </div>
+          <div class="hero-foot">
+            <span>Current plan: Nov 2026 – Apr 2028</span
+            ><span>Future tracks follow sequentially</span
+            ><span>Dark / light mode across every page</span>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="kicker">EXPLORE YOUR COURSES</div>
+          <h2>Build depth, then broaden your skills.</h2>
+          <p>
+            Your original development timetable and progress remain in Software
+            &amp; Web. New tracks use separate progress checkboxes. You do not
+            need to learn all the applications listed in a track.
+          </p>
+          <div class="home-grid">
+            <a class="overview-card" href="software.html"
+              ><span class="badge">CURRENT PRIORITY</span>
+              <h3>Software &amp; Web Development</h3>
+              <p>
+                19 core modules, PHP/backend specialization, supplementary ICT
+                studies and the new game-development path.
+              </p>
+              <strong>Continue your existing roadmap →</strong></a
+            ><a class="overview-card" href="ai.html"
+              ><span class="badge">ANYTIME</span>
+              <h3>Agentic AI, ML & LLMs</h3>
+              <p>
+                Use AI across programme management, finance, HR, procurement,
+                communications, MEAL and IT. Begin with one assistant and one
+                automation platform; build coded agents only after Python and
+                API fundamentals.
+              </p>
+              <span
+                >11 tools / resources · Flexible · any day · 20–45 minute
+                practice blocks</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="graphics.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Graphic Design</h3>
+              <p>
+                Learn design principles first, then choose one vector tool, one
+                image editor and one layout tool. Paid alternatives are a
+                reference shelf, not a requirement to master every application.
+              </p>
+              <span
+                >13 tools / resources · 12 weeks · after game development</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="video.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Video Production</h3>
+              <p>
+                Move from storytelling and capture to editing, colour, sound and
+                delivery. Start with one editor; use the other tools when a
+                project needs them.
+              </p>
+              <span>9 tools / resources · 12 weeks · after graphics</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="audio.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Audio Production</h3>
+              <p>
+                Learn recording, editing and mixing before collecting plugins.
+                Choose spoken-word production first, then music or
+                post-production as your specialism.
+              </p>
+              <span>8 tools / resources · 8 weeks · after video</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="architecture.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Architectural Projects & Visualisation</h3>
+              <p>
+                Learn scale, drafting and building information before rendering.
+                These are software learning projects; professional construction
+                documents require qualified review.
+              </p>
+              <span>8 tools / resources · 16 weeks · after audio</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="cybersecurity.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Cyber Security & Ethical Hacking</h3>
+              <p>
+                Build networking and Linux foundations, then practise defensive
+                analysis and authorised testing in dedicated labs.
+              </p>
+              <span>5 tools / resources · 16 weeks · after architecture</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="cloud.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Cloud Computing</h3>
+              <p>
+                Learn one cloud deeply first. Azure is a practical default for a
+                Microsoft-heavy workplace; AWS is an alternative, not another
+                immediate obligation.
+              </p>
+              <span>5 tools / resources · 12 weeks · after cyber security</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="data.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Data Science & Data Analytics</h3>
+              <p>
+                Start with spreadsheets and SQL, progress to dashboards, then
+                Python statistics and machine learning.
+              </p>
+              <span>6 tools / resources · 16 weeks · after cloud</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="networking.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Computer Networking & IT Support</h3>
+              <p>
+                Build practical troubleshooting habits alongside network
+                concepts. Reinforce foundations before advanced security or
+                cloud projects.
+              </p>
+              <span>5 tools / resources · 12 weeks · after data analytics</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="repair.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Computer Repair & Maintenance</h3>
+              <p>
+                Develop a diagnosis-first approach: inspect symptoms, isolate
+                causes, protect data, repair and verify.
+              </p>
+              <span>4 tools / resources · 8 weeks · after networking</span
+              ><strong>Explore the roadmap →</strong></a
+            ><a class="overview-card" href="office.html"
+              ><span class="badge">FUTURE TRACK</span>
+              <h3>Microsoft Office Professional</h3>
+              <p>
+                Word, Excel, PowerPoint, Outlook, Access and workplace
+                automation.
+              </p>
+              <strong>Explore the roadmap →</strong></a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="kicker">WHEN TO LEARN WHAT</div>
+          <h2>Your learning queue</h2>
+          <div class="notice">
+            Keep the current plan through April 2028. AI practice is flexible
+            and replaces a little review time; it does not add another full
+            study load. Future durations are focused learning estimates, not
+            mastery promises or fixed calendar deadlines. Start each track after
+            completing the previous capstone.
+          </div>
+          <ol class="queue">
+            <li>
+              <strong
+                >Now → April 2028: existing software, web, mobile &amp; PHP
+                plan</strong
+              >
+              <p>Keep the original timetable and progress.</p>
+            </li>
+            <li>
+              <strong
+                >Alongside, anytime: AI literacy and simple automation</strong
+              >
+              <p>
+                20–45 minute practice blocks; Python is required before coded
+                agent modules.
+              </p>
+            </li>
+            <li>
+              <a href="software.html#game-development"
+                ><strong>Game Development</strong></a
+              >
+              <p>8 weeks · after April 2028 specialization</p>
+            </li>
+            <li>
+              <a href="graphics.html"><strong>Graphic Design</strong></a>
+              <p>12 weeks · after game development</p>
+            </li>
+            <li>
+              <a href="video.html"><strong>Video Production</strong></a>
+              <p>12 weeks · after graphics</p>
+            </li>
+            <li>
+              <a href="audio.html"><strong>Audio Production</strong></a>
+              <p>8 weeks · after video</p>
+            </li>
+            <li>
+              <a href="architecture.html"
+                ><strong>Architectural Projects & Visualisation</strong></a
+              >
+              <p>16 weeks · after audio</p>
+            </li>
+            <li>
+              <a href="cybersecurity.html"
+                ><strong>Cyber Security & Ethical Hacking</strong></a
+              >
+              <p>16 weeks · after architecture</p>
+            </li>
+            <li>
+              <a href="cloud.html"><strong>Cloud Computing</strong></a>
+              <p>12 weeks · after cyber security</p>
+            </li>
+            <li>
+              <a href="data.html"
+                ><strong>Data Science & Data Analytics</strong></a
+              >
+              <p>16 weeks · after cloud</p>
+            </li>
+            <li>
+              <a href="networking.html"
+                ><strong>Computer Networking & IT Support</strong></a
+              >
+              <p>12 weeks · after data analytics</p>
+            </li>
+            <li>
+              <a href="repair.html"
+                ><strong>Computer Repair & Maintenance</strong></a
+              >
+              <p>8 weeks · after networking</p>
+            </li>
+            <li>
+              <a href="office.html"
+                ><strong>Microsoft Office Professional</strong></a
+              >
+              <p>12 weeks · after computer repair and maintenance</p>
+            </li>
+          </ol>
+          <p>
+            Prerequisite refreshers are allowed earlier: networking before cyber
+            security/cloud, Python and statistics before ML, and visual-design
+            basics before game art. The full specialisations stay in the future
+            queue.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <a href="index.html" class="brand footer-brand"
+          ><span class="brand-mark"
+            ><img
+              src="https://seekicon.com/free-icon-download/dev_1.svg"
+              alt="Devpath logo"
+              width="34"
+              height="34" /></span
+          ><span>dev<span class="brand-accent">path</span></span></a
+        >
+        <p>Learn. Build. Keep growing.</p>
+        <p>
+          Personal roadmap · Resources reviewed 7 November 2026 · Progress saved
+          in this browser
+        </p>
+        <a href="index.html">All learning tracks →</a>
+      </div>
+    </footer>
+    <script src="experience.js" defer></script>
+  </body>
+</html>
