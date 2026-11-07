@@ -17,3 +17,111 @@
 .stack-demo{width:100%;max-width:510px;margin:20px 0}.stack-demo .demo-top{gap:7px}.stack-demo .demo-top strong{min-width:0;overflow-wrap:anywhere}.stack-demo .demo-top button{padding:4px 7px}.stack-demo .demo-canvas{height:220px;overflow:auto}.stack-demo pre{color:#d4d4d4;font:12px/1.75 Consolas,'Courier New',monospace;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:2}.stack-demo .demo-bottom{gap:14px}.stack-demo .demo-bottom span:last-child{text-align:right}
 .stack-demo .syntax-keyword{color:#c586c0}.stack-demo .syntax-string{color:#ce9178}.stack-demo .syntax-number{color:#b5cea8}.stack-demo .syntax-comment{color:#6a9955}.stack-demo .syntax-tag{color:#569cd6}.stack-demo .syntax-function{color:#dcdcaa}.stack-demo .syntax-property{color:#9cdcfe}.stack-demo .syntax-name{color:#4ec9b0}.stack-demo .syntax-punctuation{color:#d4d4d4}
 @media(max-width:760px){.floating-tools{left:auto;right:12px}.assistant-panel{left:auto;right:12px}.footer{padding-left:0;padding-right:58px}.stack-demo .demo-canvas{height:205px;padding:12px}.stack-demo pre{font-size:11px}.stack-demo .demo-top{flex-wrap:wrap}.stack-demo .demo-top strong{flex-basis:50%}}
+/* =====================================================
+   MOBILE "MORE COURSES" DROPDOWN FIX
+   Paste at the very bottom of hub.css.
+===================================================== */
+
+/*
+Only the explicit .open state controls visibility.
+This overrides older hover and focus-within rules.
+*/
+.hub-nav .nav-dropdown:not(.open) .dropdown-panel {
+  display: none;
+}
+
+.hub-nav .nav-dropdown.open .dropdown-panel {
+  display: block;
+}
+
+/* Mobile and tablet navigation, including phone landscape. */
+@media (max-width: 1024px) {
+  .hub-nav {
+    min-height: 72px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .hub-nav .brand {
+    margin-right: auto;
+  }
+
+  #menuToggle {
+    display: block;
+  }
+
+  /*
+  Let the menu occupy a full row.
+
+  The height limit leaves room for the header.
+  dvh adjusts to changes in the mobile browser's toolbar.
+  */
+  .hub-nav #hubMenu {
+    display: none;
+    order: 3;
+
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 0;
+
+    /* Fallback for browsers without dvh support. */
+    max-height: calc(100vh - 110px);
+    max-height: calc(100dvh - 110px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hub-nav #hubMenu.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*
+  Prevent links and the dropdown from shrinking
+  when the submenu opens.
+  */
+  #hubMenu > a,
+  #hubMenu > .nav-dropdown {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Comfortable tap targets. */
+  #hubMenu > a,
+  .nav-dropdown > button {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px;
+    text-align: left;
+  }
+
+  /*
+  Expand the submenu inside the mobile menu
+  instead of positioning it over the page.
+  */
+  .nav-dropdown .dropdown-panel {
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+
+    margin: 0 0 8px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .dropdown-panel a {
+    min-height: 44px;
+    white-space: normal;
+  }
+}
