@@ -1,60 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1426" />
-  <meta name="description" content="A personalized intensive full-stack web and mobile development roadmap, November 2026 to October 2027." />
-  <title>Software &amp; Web Development | Devpath</title>
-  <link rel="icon" href="https://seekicon.com/free-icon-download/dev_1.svg" />
-  <link rel="preload" as="image" href="hero1.png" />
-  <link rel="preload" as="image" href="hero2.png" />
-  <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="hub.css" /><script src="common.js" defer></script>
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="container hub-nav"><a href="index.html" class="brand"><span class="brand-mark"><img src="https://seekicon.com/free-icon-download/dev_1.svg" alt="Devpath logo" width="34" height="34"></span><span>dev<span class="brand-accent">path</span><small>PERSONAL LEARNING CAMPUS</small></span></a><button id="menuToggle" class="icon-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="hubMenu">☰</button><nav id="hubMenu" aria-label="Main navigation"><a href="index.html">Home</a><a href="ai.html">Agentic AI &amp; ML</a><a href="software.html">Software &amp; Web</a><a href="graphics.html">Graphics</a><a href="video.html">Video</a><a href="audio.html">Audio</a><a href="architecture.html">Architecture</a><div class="nav-dropdown"><button id="moreToggle" aria-expanded="false" aria-controls="moreMenu">More courses ▾</button><div id="moreMenu" class="dropdown-panel"><a href="cybersecurity.html">Cyber Security &amp; Ethical Hacking</a><a href="cloud.html">Cloud Computing</a><a href="data.html">Data Science &amp; Analytics</a><a href="networking.html">Networking &amp; IT Support</a><a href="repair.html">Computer Repair &amp; Maintenance</a><a href="office.html">Microsoft Office Professional</a></div></div></nav><button id="themeToggle" class="icon-btn" aria-label="Toggle light or dark mode">☀</button></div></header>
-  <main id="main">
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> YOUR EXISTING DEVELOPMENT PLAN <span class="eyebrow-sep">/</span> 2026–2027</div>
-          <h1>Software, web, mobile <span>&amp; games.</span></h1>
-          <p>A practical, intensive learning roadmap designed around your schedule. Master modern web development, build real applications, and move into cross-platform mobile development.</p>
-          <div class="hero-buttons"><a href="#modules" class="btn btn-primary">Explore the roadmap <span>→</span></a><a href="#schedule" class="btn btn-outline">View weekly schedule</a></div>
-          <div class="hero-foot"><span>◉ Starting 2 Nov 2026</span><span>◷ 40 hours / week</span><span>⌁ CAT (UTC+2)</span></div>
-        </div>
-        <div class="hero-panel"><div class="panel-top"><span class="panel-label">YOUR LEARNING DASHBOARD</span><span class="live-pill">● IN PROGRESS</span></div><div class="panel-title">Full-Stack Developer</div><p>Web + Mobile specialization</p>
-          <div class="progress-top"><span>Overall completion</span><strong id="heroPercent">0%</strong></div><div class="progress-track"><div id="heroProgress" class="progress-fill"></div></div><div class="progress-foot"><span id="heroCount">2 of 19 modules completed</span><span>Oct 2027 goal</span></div>
-          <div class="demo-screen stack-demo" aria-label="Code previews for every core technology"><div class="demo-top"><span aria-hidden="true">● ● ●</span><strong id="stackDemoTitle">HTML5 · Page structure</strong><button id="stackDemoPrevious" type="button" aria-label="Previous technology">‹</button><button id="stackDemoNext" type="button" aria-label="Next technology">›</button><button id="stackDemoPause" type="button" aria-label="Pause technology preview">Pause</button></div><div class="demo-canvas" id="stackDemoCanvas"><pre><code id="stackDemoCode"></code></pre></div><div class="demo-bottom"><span id="stackDemoCount">1 / 12</span><span id="stackDemoPurpose">Structure webpage content</span></div></div><div class="panel-divider"></div><div class="stack-label">YOUR CORE TECH STACK</div><div class="stack-pills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git &amp; GitHub</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>MySQL</span><span>Python</span><span>React Native</span><span>Expo</span></div>
-          <div class="panel-note"><span>✦</span> Your progress is saved automatically on this device.</div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1426" />
+    <meta
+      name="description"
+      content="A personalized intensive full-stack web and mobile development roadmap, November 2026 to October 2027."
+    />
+    <title>Software &amp; Web Development | Devpath</title>
+    <link rel="icon" href="https://seekicon.com/free-icon-download/dev_1.svg" />
+    <link rel="preload" as="image" href="hero1.png" />
+    <link rel="preload" as="image" href="hero2.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="hub.css" />
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container hub-nav">
+        <a href="index.html" class="brand"
+          ><span class="brand-mark"
+            ><img
+              src="https://seekicon.com/free-icon-download/dev_1.svg"
+              alt="Devpath logo"
+              width="34"
+              height="34" /></span
+          ><span
+            >dev<span class="brand-accent">path</span
+            ><small>PERSONAL LEARNING CAMPUS</small></span
+          ></a
+        ><button
+          id="menuToggle"
+          class="icon-btn"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="hubMenu"
+        >
+          ☰
+        </button>
+        <nav id="hubMenu" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="ai.html">Agentic AI &amp; ML</a
+          ><a href="software.html">Software &amp; Web</a
+          ><a href="graphics.html">Graphics</a><a href="video.html">Video</a
+          ><a href="audio.html">Audio</a
+          ><a href="architecture.html">Architecture</a>
+          <div class="nav-dropdown">
+            <button
+              id="moreToggle"
+              aria-expanded="false"
+              aria-controls="moreMenu"
+            >
+              More courses ▾
+            </button>
+            <div id="moreMenu" class="dropdown-panel">
+              <a href="cybersecurity.html"
+                >Cyber Security &amp; Ethical Hacking</a
+              ><a href="cloud.html">Cloud Computing</a
+              ><a href="data.html">Data Science &amp; Analytics</a
+              ><a href="networking.html">Networking &amp; IT Support</a
+              ><a href="repair.html">Computer Repair &amp; Maintenance</a
+              ><a href="office.html">Microsoft Office Professional</a>
+            </div>
+          </div>
+        </nav>
+        <button
+          id="themeToggle"
+          class="icon-btn"
+          aria-label="Toggle light or dark mode"
+        >
+          ☀
+        </button>
       </div>
-    </section>
-    <section id="overview" class="section overview-section"><div class="container"><div class="section-heading"><div><div class="kicker">THE BIG PICTURE</div><h2>Your journey, at a glance.</h2><p>One clear path. Real projects. Skills that build on each other.</p></div></div>
-      <div class="stat-grid"><article class="stat"><span class="stat-icon">▦</span><strong>19</strong><span>Learning modules</span></article><article class="stat"><span class="stat-icon">◷</span><strong>40<span class="unit">hrs</span></strong><span>Weekly study allocation</span></article><article class="stat"><span class="stat-icon">⌘</span><strong>3</strong><span>Portfolio projects</span></article><article class="stat"><span class="stat-icon">◎</span><strong>12<span class="unit">mo</span></strong><span>Roadmap duration</span></article></div>
-      <div class="path-section"><div class="path-heading"><h3>Three stages. One destination.</h3><span>Nov 2026 – Oct 2027</span></div><div class="path-grid"><article class="path-card"><div class="path-no">01 <span>6 MONTHS</span></div><h3>Full-Stack Web</h3><p>JavaScript, TypeScript, React, Next.js, APIs, MySQL, Python and deployment.</p><div class="path-tag blue">NOV 2026 – MAY 2027</div></article><article class="path-card"><div class="path-no">02 <span>3 MONTHS</span></div><h3>Mobile Development</h3><p>React Native, Expo, mobile navigation, offline storage and Android builds.</p><div class="path-tag green">MAY – AUG 2027</div></article><article class="path-card"><div class="path-no">03 <span>3 MONTHS</span></div><h3>Portfolio &amp; Growth</h3><p>Improve real applications, strengthen engineering skills and publish your work.</p><div class="path-tag amber">AUG – OCT 2027</div></article></div></div>
-    </div></section>
-    <section id="modules" class="section modules-section"><div class="container"><div class="section-heading split"><div><div class="kicker">THE LEARNING PATH</div><h2>19 modules. Step by step.</h2><p>HTML5 and CSS3 are already completed. Learn Git and GitHub alongside JavaScript using both SuperSimpleDev videos. Every module includes topics, a recommended YouTube channel and a practical outcome.</p></div><button class="btn btn-subtle" id="resetProgress" type="button">↺ Reset progress</button></div>
-      <div class="filters" role="group" aria-label="Filter modules"><button class="filter active" data-filter="all" aria-pressed="true">All modules <span>19</span></button><button class="filter" data-filter="web" aria-pressed="false">Web development <span>13</span></button><button class="filter" data-filter="mobile" aria-pressed="false">Mobile apps <span>5</span></button><button class="filter" data-filter="portfolio" aria-pressed="false">Portfolio <span>1</span></button></div>
-      <div class="completed-intro">✓ HTML5 and CSS3 are marked complete based on your existing experience. You can still revisit their tutorials anytime.</div><div id="moduleGrid" class="module-grid"></div>
-    </div></section>
-    <section id="specialization" class="section specialization-section"><div class="container">
-      <div class="section-heading split"><div><div class="kicker">AFTER THE CURRENT ROADMAP · NOV 2027 – APR 2028</div><h2>Your next specialization: PHP, Laravel &amp; advanced backend skills.</h2><p>Complete the existing web and mobile roadmap first. This optional six-month phase adds a second backend ecosystem and practical production skills without changing your current study plan.</p></div><span class="phase-label">PHASE 04 · 6 MONTHS</span></div>
-      <div class="specialization-intro"><div><strong>7 advanced modules</strong><span>November 2027 – April 2028</span></div><div><strong id="specializationPercent">0%</strong><span id="specializationCount">0 of 7 completed</span></div></div>
-      <div class="specialization-track"><div id="specializationProgress"></div></div>
-      <div class="supplement-note"><strong>Recommended approach:</strong> PHP and Laravel are an alternative backend path, not a replacement for your existing Node.js and Next.js skills. Keep using MySQL. Allocate the same existing study timetable after October 2027, and advance when you can build each project independently.</div>
-      <div id="specializationGrid" class="module-grid"></div>
-      <div class="method-banner"><div class="method-icon">✳</div><div><h3>Post-roadmap capstone: SAFE administration API</h3><p>Build a Laravel/MySQL API for news, projects, applications and staff roles, document it, test it and deploy it securely. Connect it to an existing React or React Native frontend using sample data.</p></div></div>
-    </div></section>
-    <section id="supplementary" class="section supplementary-section"><div class="container"><div class="section-heading"><div class="kicker">COMPLEMENTARY ICT KNOWLEDGE</div><h2>Supplementary reading &amp; understanding.</h2><p>Short, structured sessions alongside your core coding roadmap. These topics do not extend your main programme or count toward its 19-module completion score.</p></div><div class="supplement-note"><strong>Suggested time:</strong> 30 minutes on Wednesday and Friday evenings, plus 60 minutes on Sunday, replacing an equivalent amount of general review time. Total: <strong>2 hours weekly</strong> within your existing 40-hour timetable. Subjects beginning later remain scheduled for their stated dates.</div><div id="supplementGrid" class="supplement-grid"></div></div></section>
-    <section id="schedule" class="section schedule-section"><div class="container"><div class="section-heading"><div class="kicker">YOUR STUDY ROUTINE</div><h2>Consistency creates progress.</h2><p>40 scheduled hours each week, including breaks. Adjust during exams and demanding work periods.</p></div>
-      <div class="schedule-grid"><article class="schedule-card"><div class="schedule-head"><div><span class="schedule-overline">MONDAY – FRIDAY</span><h3>Evening sessions</h3></div><div class="time-pill">8 PM – 12 AM</div></div><div class="schedule-rows"><div><time>8:00 – 9:00</time><span>Video tutorial and notes</span></div><div><time>9:00 – 10:00</time><span>Guided coding practice</span></div><div class="break"><time>10:00 – 10:15</time><span>Break</span></div><div><time>10:15 – 11:15</time><span>Independent exercises (Wed/Fri: 30 min supplementary reading)</span></div><div><time>11:15 – 12:00</time><span>Project work and GitHub commit</span></div></div></article>
-      <article class="schedule-card"><div class="schedule-head"><div><span class="schedule-overline">SATURDAY – SUNDAY</span><h3>Deep work sessions</h3></div><div class="time-pill">12 PM – 10 PM</div></div><div class="schedule-rows"><div><time>12:00 – 2:00</time><span>Tutorials and exercises</span></div><div class="break"><time>2:00 – 2:30</time><span>Lunch break</span></div><div><time>2:30 – 4:30</time><span>Practical programming</span></div><div class="break"><time>4:30 – 5:00</time><span>Break</span></div><div><time>5:00 – 7:00</time><span>Independent project development</span></div><div class="break"><time>7:00 – 8:00</time><span>Dinner and rest</span></div><div><time>8:00 – 9:30</time><span>Testing and debugging</span></div><div><time>9:30 – 10:00</time><span>Documentation and review (Sun: 60 min supplementary study during project/review blocks)</span></div></div></article></div>
-      <div class="method-banner"><div class="method-icon">✳</div><div><h3>Learn by building, not just watching.</h3><p>Use roughly 25% of focused time for tutorials, 50% for writing code and projects, and 25% for debugging, revision and testing.</p></div></div>
-    </div></section>
-    <section id="projects" class="section projects-section"><div class="container"><div class="section-heading"><div class="kicker">BUILD SOMETHING REAL</div><h2>Your portfolio projects.</h2><p>Use these projects to turn lessons into practical, demonstrable skills.</p></div><div class="project-grid"><article class="project-card"><div class="project-visual visual-safe"><div class="mock-browser"><div class="mock-dots">● ● ●</div><div class="mock-site"><div class="mock-header"></div><div class="mock-lines"><i></i><i></i><i></i></div><div class="mock-cards"><i></i><i></i><i></i></div></div></div></div><div class="project-content"><span class="project-index">PROJECT 01 · WEB</span><h3>SAFE South Sudan CMS</h3><p>A content management system for publishing news, projects, vacancies and images, with secure staff access.</p><div class="project-tech"><span>Next.js</span><span>TypeScript</span><span>MySQL</span></div></div></article><article class="project-card"><div class="project-visual visual-school"><div class="mock-dashboard"><div class="mock-dashboard-top"></div><div class="mock-metrics"><i></i><i></i><i></i></div><div class="mock-chart"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div></div></div><div class="project-content"><span class="project-index">PROJECT 02 · FULL STACK</span><h3>School Feeding Management</h3><p>Track school attendance, commodity distributions and reports through a database-backed web application.</p><div class="project-tech"><span>React</span><span>Node.js</span><span>MySQL</span></div></div></article><article class="project-card"><div class="project-visual visual-mobile"><div class="mock-phone"><div class="phone-notch"></div><div class="phone-title"></div><div class="phone-line"></div><div class="phone-row"></div><div class="phone-row"></div><div class="phone-row"></div><div class="phone-button"></div></div></div><div class="project-content"><span class="project-index">PROJECT 03 · MOBILE</span><h3>Field Monitoring Mobile App</h3><p>Capture field observations offline and synchronize them securely when internet access returns.</p><div class="project-tech"><span>React Native</span><span>Expo</span><span>SQLite</span></div></div></article></div><p class="privacy-note">For demonstrations, use fictional or anonymized data. Do not publish real beneficiary or confidential organizational records.</p></div></section>
-    <section class="section start-section" id="start"><div class="container"><div class="start-card"><div><div class="kicker">START WHERE YOU ARE</div><h2>Your next step starts with JavaScript.</h2><p>You already know HTML, CSS and basic JavaScript. Start with array methods, async/await, modules and a practical task manager. Progress through the roadmap one project at a time.</p><div class="start-actions"><a href="https://www.youtube.com/results?search_query=Traversy+Media+Modern+JavaScript+From+The+Beginning" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start JavaScript tutorial ↗</a><a href="#modules" class="btn btn-outline">Track my modules</a></div></div><div class="start-code" aria-hidden="true"><div><span>01</span> <em>const</em> goal = <b>"Full-Stack Developer"</b>;</div><div><span>02</span> <em>const</em> progress = <b>"one day at a time"</b>;</div><div><span>03</span> </div><div><span>04</span> <i>function</i> keepBuilding() {'{'}</div><div><span>05</span> &nbsp; learn();</div><div><span>06</span> &nbsp; practice();</div><div><span>07</span> &nbsp; ship();</div><div><span>08</span> {'}'}</div></div></div></div></section>
-  <section class="section" id="game-development"><div class="container"><div class="kicker">NEXT · AFTER APRIL 2028</div><h2>Game development: build your first playable world.</h2><p>Keep the existing web, mobile and PHP plan first. Then follow this focused 8-week game track. These checkpoints have their own progress.</p><div id="gameTrack"></div></div></section></main>
-  <footer class="footer"><div class="container footer-inner"><div class="brand footer-brand"><span class="brand-mark"><img src="https://seekicon.com/free-icon-download/dev_1.svg" alt="Devpath logo" width="34" height="34"></span><span>dev<span class="brand-accent">path</span></span></div><span>Full-Stack Web &amp; Mobile Roadmap · 2026–2028</span><a href="#home">Back to top ↑</a></div></footer>
-<script src="catalog.js"></script><script src="track.js"></script><script src="experience.js" defer></script><script src="stack-preview.js" defer></script></body>
+    </header>
+    <main id="main">
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="pulse"></span> YOUR EXISTING DEVELOPMENT PLAN
+              <span class="eyebrow-sep">/</span> 2026–2027
+            </div>
+            <h1>Software, web, mobile <span>&amp; games.</span></h1>
+            <p>
+              A practical, intensive learning roadmap designed around your
+              schedule. Master modern web development, build real applications,
+              and move into cross-platform mobile development.
+            </p>
+            <div class="hero-buttons">
+              <a href="#modules" class="btn btn-primary"
+                >Explore the roadmap <span>→</span></a
+              ><a href="#schedule" class="btn btn-outline"
+                >View weekly schedule</a
+              >
+            </div>
+            <div class="hero-foot">
+              <span>◉ Starting 2 Nov 2026</span><span>◷ 40 hours / week</span
+              ><span>⌁ CAT (UTC+2)</span>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="panel-top">
+              <span class="panel-label">YOUR LEARNING DASHBOARD</span
+              ><span class="live-pill">● IN PROGRESS</span>
+            </div>
+            <div class="panel-title">Full-Stack Developer</div>
+            <p>Web + Mobile specialization</p>
+            <div class="progress-top">
+              <span>Overall completion</span
+              ><strong id="heroPercent">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div id="heroProgress" class="progress-fill"></div>
+            </div>
+            <div class="progress-foot">
+              <span id="heroCount">2 of 20 modules completed</span
+              ><span>Oct 2027 goal</span>
+            </div>
+            <div
+              class="demo-screen stack-demo"
+              aria-label="Code previews for every core technology"
+            >
+              <div class="demo-top">
+                <span aria-hidden="true">● ● ●</span
+                ><strong id="stackDemoTitle">HTML5 · Page structure</strong
+                ><button
+                  id="stackDemoPrevious"
+                  type="button"
+                  aria-label="Previous technology"
+                >
+                  ‹</button
+                ><button
+                  id="stackDemoNext"
+                  type="button"
+                  aria-label="Next technology"
+                >
+                  ›</button
+                ><button
+                  id="stackDemoPause"
+                  type="button"
+                  aria-label="Pause technology preview"
+                >
+                  Pause
+                </button>
+              </div>
+              <div class="demo-canvas" id="stackDemoCanvas">
+                <pre><code id="stackDemoCode"></code></pre>
+              </div>
+              <div class="demo-bottom">
+                <span id="stackDemoCount">1 / 12</span
+                ><span id="stackDemoPurpose">Structure webpage content</span>
+              </div>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="stack-label">YOUR CORE TECH STACK</div>
+            <div class="stack-pills">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span
+              ><span>Git &amp; GitHub</span><span>TypeScript</span
+              ><span>React</span><span>Next.js</span><span>Node.js</span
+              ><span>MySQL</span><span>Python</span><span>React Native</span
+              ><span>Expo</span>
+            </div>
+            <div class="panel-note">
+              <span>✦</span> Your progress is saved automatically on this
+              device.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="overview" class="section overview-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="kicker">THE BIG PICTURE</div>
+              <h2>Your journey, at a glance.</h2>
+              <p>
+                One clear path. Real projects. Skills that build on each other.
+              </p>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <article class="stat">
+              <span class="stat-icon">▦</span><strong>20</strong
+              ><span>Learning modules</span>
+            </article>
+            <article class="stat">
+              <span class="stat-icon">◷</span
+              ><strong>40<span class="unit">hrs</span></strong
+              ><span>Weekly study allocation</span>
+            </article>
+            <article class="stat">
+              <span class="stat-icon">⌘</span><strong>3</strong
+              ><span>Portfolio projects</span>
+            </article>
+            <article class="stat">
+              <span class="stat-icon">◎</span
+              ><strong>12<span class="unit">mo</span></strong
+              ><span>Roadmap duration</span>
+            </article>
+          </div>
+          <div class="path-section">
+            <div class="path-heading">
+              <h3>Three stages. One destination.</h3>
+              <span>Nov 2026 – Oct 2027</span>
+            </div>
+            <div class="path-grid">
+              <article class="path-card">
+                <div class="path-no">01 <span>6 MONTHS</span></div>
+                <h3>Full-Stack Web</h3>
+                <p>
+                  JavaScript, TypeScript, React, Next.js, APIs, MySQL, Python
+                  and deployment.
+                </p>
+                <div class="path-tag blue">NOV 2026 – MAY 2027</div>
+              </article>
+              <article class="path-card">
+                <div class="path-no">02 <span>3 MONTHS</span></div>
+                <h3>Mobile Development</h3>
+                <p>
+                  React Native, Expo, mobile navigation, offline storage and
+                  Android builds.
+                </p>
+                <div class="path-tag green">MAY – AUG 2027</div>
+              </article>
+              <article class="path-card">
+                <div class="path-no">03 <span>3 MONTHS</span></div>
+                <h3>Portfolio &amp; Growth</h3>
+                <p>
+                  Improve real applications, strengthen engineering skills and
+                  publish your work.
+                </p>
+                <div class="path-tag amber">AUG – OCT 2027</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="modules" class="section modules-section">
+        <div class="container">
+          <div class="section-heading split">
+            <div>
+              <div class="kicker">THE LEARNING PATH</div>
+              <h2>20 modules. Step by step.</h2>
+              <p>
+                HTML5 and CSS3 are already completed. Learn Git and GitHub
+                alongside JavaScript using both SuperSimpleDev videos. Every
+                module includes topics, a recommended YouTube channel and a
+                practical outcome.
+              </p>
+            </div>
+            <button class="btn btn-subtle" id="resetProgress" type="button">
+              ↺ Reset progress
+            </button>
+          </div>
+          <div class="filters" role="group" aria-label="Filter modules">
+            <button class="filter active" data-filter="all" aria-pressed="true">
+              All modules <span>20</span></button
+            ><button class="filter" data-filter="web" aria-pressed="false">
+              Web development <span>14</span></button
+            ><button class="filter" data-filter="mobile" aria-pressed="false">
+              Mobile apps <span>5</span></button
+            ><button
+              class="filter"
+              data-filter="portfolio"
+              aria-pressed="false"
+            >
+              Portfolio <span>1</span>
+            </button>
+          </div>
+          <div class="completed-intro">
+            ✓ HTML5 and CSS3 are marked complete based on your existing
+            experience. You can still revisit their tutorials anytime.
+          </div>
+          <div id="moduleGrid" class="module-grid"></div>
+        </div>
+      </section>
+      <section id="specialization" class="section specialization-section">
+        <div class="container">
+          <div class="section-heading split">
+            <div>
+              <div class="kicker">
+                AFTER THE CURRENT ROADMAP · NOV 2027 – APR 2028
+              </div>
+              <h2>
+                Your next specialization: PHP, Laravel &amp; advanced backend
+                skills.
+              </h2>
+              <p>
+                Complete the existing web and mobile roadmap first. This
+                optional six-month phase adds a second backend ecosystem and
+                practical production skills without changing your current study
+                plan.
+              </p>
+            </div>
+            <span class="phase-label">PHASE 04 · 6 MONTHS</span>
+          </div>
+          <div class="specialization-intro">
+            <div>
+              <strong>7 advanced modules</strong
+              ><span>November 2027 – April 2028</span>
+            </div>
+            <div>
+              <strong id="specializationPercent">0%</strong
+              ><span id="specializationCount">0 of 7 completed</span>
+            </div>
+          </div>
+          <div class="specialization-track">
+            <div id="specializationProgress"></div>
+          </div>
+          <div class="supplement-note">
+            <strong>Recommended approach:</strong> PHP and Laravel are an
+            alternative backend path, not a replacement for your existing
+            Node.js and Next.js skills. Keep using MySQL. Allocate the same
+            existing study timetable after October 2027, and advance when you
+            can build each project independently.
+          </div>
+          <div id="specializationGrid" class="module-grid"></div>
+          <div class="method-banner">
+            <div class="method-icon">✳</div>
+            <div>
+              <h3>Post-roadmap capstone: SAFE administration API</h3>
+              <p>
+                Build a Laravel/MySQL API for news, projects, applications and
+                staff roles, document it, test it and deploy it securely.
+                Connect it to an existing React or React Native frontend using
+                sample data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="supplementary" class="section supplementary-section">
+        <div class="container">
+          <div class="section-heading">
+            <div class="kicker">COMPLEMENTARY ICT KNOWLEDGE</div>
+            <h2>Supplementary reading &amp; understanding.</h2>
+            <p>
+              Short, structured sessions alongside your core coding roadmap.
+              These topics do not extend your main programme or count toward its
+              20-module completion score.
+            </p>
+          </div>
+          <div class="supplement-note">
+            <strong>Suggested time:</strong> 30 minutes on Wednesday and Friday
+            evenings, plus 60 minutes on Sunday, replacing an equivalent amount
+            of general review time. Total:
+            <strong>2 hours weekly</strong> within your existing 40-hour
+            timetable. Subjects beginning later remain scheduled for their
+            stated dates.
+          </div>
+          <div id="supplementGrid" class="supplement-grid"></div>
+        </div>
+      </section>
+      <section id="schedule" class="section schedule-section">
+        <div class="container">
+          <div class="section-heading">
+            <div class="kicker">YOUR STUDY ROUTINE</div>
+            <h2>Consistency creates progress.</h2>
+            <p>
+              40 scheduled hours each week, including breaks. Adjust during
+              exams and demanding work periods.
+            </p>
+          </div>
+          <div class="schedule-grid">
+            <article class="schedule-card">
+              <div class="schedule-head">
+                <div>
+                  <span class="schedule-overline">MONDAY – FRIDAY</span>
+                  <h3>Evening sessions</h3>
+                </div>
+                <div class="time-pill">8 PM – 12 AM</div>
+              </div>
+              <div class="schedule-rows">
+                <div>
+                  <time>8:00 – 9:00</time><span>Video tutorial and notes</span>
+                </div>
+                <div>
+                  <time>9:00 – 10:00</time><span>Guided coding practice</span>
+                </div>
+                <div class="break">
+                  <time>10:00 – 10:15</time><span>Break</span>
+                </div>
+                <div>
+                  <time>10:15 – 11:15</time
+                  ><span
+                    >Independent exercises (Wed/Fri: 30 min supplementary
+                    reading)</span
+                  >
+                </div>
+                <div>
+                  <time>11:15 – 12:00</time
+                  ><span>Project work and GitHub commit</span>
+                </div>
+              </div>
+            </article>
+            <article class="schedule-card">
+              <div class="schedule-head">
+                <div>
+                  <span class="schedule-overline">SATURDAY – SUNDAY</span>
+                  <h3>Deep work sessions</h3>
+                </div>
+                <div class="time-pill">12 PM – 10 PM</div>
+              </div>
+              <div class="schedule-rows">
+                <div>
+                  <time>12:00 – 2:00</time><span>Tutorials and exercises</span>
+                </div>
+                <div class="break">
+                  <time>2:00 – 2:30</time><span>Lunch break</span>
+                </div>
+                <div>
+                  <time>2:30 – 4:30</time><span>Practical programming</span>
+                </div>
+                <div class="break">
+                  <time>4:30 – 5:00</time><span>Break</span>
+                </div>
+                <div>
+                  <time>5:00 – 7:00</time
+                  ><span>Independent project development</span>
+                </div>
+                <div class="break">
+                  <time>7:00 – 8:00</time><span>Dinner and rest</span>
+                </div>
+                <div>
+                  <time>8:00 – 9:30</time><span>Testing and debugging</span>
+                </div>
+                <div>
+                  <time>9:30 – 10:00</time
+                  ><span
+                    >Documentation and review (Sun: 60 min supplementary study
+                    during project/review blocks)</span
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="method-banner">
+            <div class="method-icon">✳</div>
+            <div>
+              <h3>Learn by building, not just watching.</h3>
+              <p>
+                Use roughly 25% of focused time for tutorials, 50% for writing
+                code and projects, and 25% for debugging, revision and testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="section projects-section">
+        <div class="container">
+          <div class="section-heading">
+            <div class="kicker">BUILD SOMETHING REAL</div>
+            <h2>Your portfolio projects.</h2>
+            <p>
+              Use these projects to turn lessons into practical, demonstrable
+              skills.
+            </p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-visual visual-safe">
+                <div class="mock-browser">
+                  <div class="mock-dots">● ● ●</div>
+                  <div class="mock-site">
+                    <div class="mock-header"></div>
+                    <div class="mock-lines"><i></i><i></i><i></i></div>
+                    <div class="mock-cards"><i></i><i></i><i></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <span class="project-index">PROJECT 01 · WEB</span>
+                <h3>SAFE South Sudan CMS</h3>
+                <p>
+                  A content management system for publishing news, projects,
+                  vacancies and images, with secure staff access.
+                </p>
+                <div class="project-tech">
+                  <span>Next.js</span><span>TypeScript</span><span>MySQL</span>
+                </div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-visual visual-school">
+                <div class="mock-dashboard">
+                  <div class="mock-dashboard-top"></div>
+                  <div class="mock-metrics"><i></i><i></i><i></i></div>
+                  <div class="mock-chart">
+                    <b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <span class="project-index">PROJECT 02 · FULL STACK</span>
+                <h3>School Feeding Management</h3>
+                <p>
+                  Track school attendance, commodity distributions and reports
+                  through a database-backed web application.
+                </p>
+                <div class="project-tech">
+                  <span>React</span><span>Node.js</span><span>MySQL</span>
+                </div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-visual visual-mobile">
+                <div class="mock-phone">
+                  <div class="phone-notch"></div>
+                  <div class="phone-title"></div>
+                  <div class="phone-line"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-button"></div>
+                </div>
+              </div>
+              <div class="project-content">
+                <span class="project-index">PROJECT 03 · MOBILE</span>
+                <h3>Field Monitoring Mobile App</h3>
+                <p>
+                  Capture field observations offline and synchronize them
+                  securely when internet access returns.
+                </p>
+                <div class="project-tech">
+                  <span>React Native</span><span>Expo</span><span>SQLite</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="privacy-note">
+            For demonstrations, use fictional or anonymized data. Do not publish
+            real beneficiary or confidential organizational records.
+          </p>
+        </div>
+      </section>
+      <section class="section start-section" id="start">
+        <div class="container">
+          <div class="start-card">
+            <div>
+              <div class="kicker">START WHERE YOU ARE</div>
+              <h2>Your next step starts with JavaScript.</h2>
+              <p>
+                You already know HTML, CSS and basic JavaScript. Start with
+                array methods, async/await, modules and a practical task
+                manager. Progress through the roadmap one project at a time.
+              </p>
+              <div class="start-actions">
+                <a
+                  href="https://www.youtube.com/results?search_query=Traversy+Media+Modern+JavaScript+From+The+Beginning"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary"
+                  >Start JavaScript tutorial ↗</a
+                ><a href="#modules" class="btn btn-outline">Track my modules</a>
+              </div>
+            </div>
+            <div class="start-code" aria-hidden="true">
+              <div>
+                <span>01</span> <em>const</em> goal =
+                <b>"Full-Stack Developer"</b>;
+              </div>
+              <div>
+                <span>02</span> <em>const</em> progress =
+                <b>"one day at a time"</b>;
+              </div>
+              <div><span>03</span></div>
+              <div><span>04</span> <i>function</i> keepBuilding() {'{'}</div>
+              <div><span>05</span> &nbsp; learn();</div>
+              <div><span>06</span> &nbsp; practice();</div>
+              <div><span>07</span> &nbsp; ship();</div>
+              <div><span>08</span> {'}'}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="game-development">
+        <div class="container">
+          <div class="kicker">NEXT · AFTER APRIL 2028</div>
+          <h2>Game development: build your first playable world.</h2>
+          <p>
+            Keep the existing web, mobile and PHP plan first. Then follow this
+            focused 8-week game track. These checkpoints have their own
+            progress.
+          </p>
+          <div id="gameTrack"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="brand footer-brand">
+          <span class="brand-mark"
+            ><img
+              src="https://seekicon.com/free-icon-download/dev_1.svg"
+              alt="Devpath logo"
+              width="34"
+              height="34" /></span
+          ><span>dev<span class="brand-accent">path</span></span>
+        </div>
+        <span>Full-Stack Web &amp; Mobile Roadmap · 2026–2028</span
+        ><a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+    <script src="catalog.js"></script>
+    <script src="track.js"></script>
+    <script src="experience.js" defer></script>
+    <script src="stack-preview.js" defer></script>
+  </body>
 </html>
